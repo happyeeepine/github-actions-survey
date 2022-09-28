@@ -5,7 +5,7 @@ on:
       - main
 
 env:
-  AWS_ROLE_ARN: arn:aws:iam::840171111484:role/github-action-iam-role
+  AWS_ROLE_ARN: arn:aws:iam::840171111484:role/github-actions-iam-role
 
 permissions:
   id-token: write
