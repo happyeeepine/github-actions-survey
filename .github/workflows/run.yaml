@@ -2,7 +2,7 @@ name: AWS Deploy
 on:
   push:
     branches:
-      - master
+      - main
 
 env:
   AWS_ROLE_ARN: arn:aws:iam::840171111484:role/github-action-iam-role
