@@ -1,12 +1,22 @@
-name: learn-github-actions
-on: [push]
+name: AWS Deploy
+on:
+  push:
+    branches:
+      - master
+
+env:
+  AWS_ROLE_ARN: arn:aws:iam::840171111484:role/github-action-iam-role
+
+permissions:
+  id-token: write
+  contents: read
 jobs:
-  check-bats-version:
+  aws-deploy:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "this is pen"
       - uses: actions/checkout@v2
-      - run: |
-          ls -al
-          cd .github/workflows/
-          ls -al
+      - uses: aws-actions/configure-aws-credentials@v1
+        with:
+          role-to-assume: ${{ env.AWS_ROLE_ARN }}
+          aws-region: ap-northeast-1
+      - run: aws sts get-caller-identity
