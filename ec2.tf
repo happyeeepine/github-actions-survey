@@ -6,3 +6,5 @@ resource "aws_instance" "demo" {
   ami           = data.aws_ssm_parameter.amzn2_ami.value
   instance_type = "t2.nano"
 }
+
+test1
