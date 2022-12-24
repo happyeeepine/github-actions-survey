@@ -9,3 +9,4 @@ resource "aws_instance" "demo" {
 
 test1
 testr2
+test3
